@@ -1,0 +1,29 @@
+{
+  "name": "snake-web",
+  "version": "1.0.0",
+  "description": "snake game like a terminal",
+  "main": "index.js",
+  "scripts": {
+    "lint": "standard --versobe | snazzy",
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "keywords": [
+    "node",
+    "game",
+    "snake",
+    "game"
+  ],
+  "author": "Julian Vasquez <juvasquez88@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "next": "^4.1.4",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  },
+  "devDependencies": {
+    "snazzy": "^7.0.0",
+    "standard": "^10.0.3"
+  }
+}
