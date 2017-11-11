@@ -18,6 +18,8 @@
   "author": "Julian Vasquez <juvasquez88@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "html-react-parser": "^0.4.0",
+    "isomorphic-unfetch": "^2.0.0",
     "next": "^4.1.4",
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
