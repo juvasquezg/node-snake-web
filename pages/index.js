@@ -254,6 +254,9 @@ export default class extends Component {
       colRandom = Math.floor(Math.random() * ((board[0].length) - 1)) + 1
     }
     board[rowRandom][colRandom] = '.'
+    console.log(`row: ${rowRandom}`)
+    console.log(`col: ${colRandom}`)
+    console.log(board)
     this.setState({ board })
   }
 
@@ -262,6 +265,60 @@ export default class extends Component {
   }
 
   render () {
+    const TerminalBar = () => (
+      <div className="bar">
+        <div className="red">
+        </div>
+        <div className="yellow"></div>
+        <div className="green"></div>
+        <style jsx global>{`
+          .bar {
+            text-align: center;
+            width: 752px;
+            height: 25px;
+            background-color: #DAD9D9;
+            margin: 0 auto;
+            font-family: monospace;
+            padding: auto;
+            float: none;
+            border-radius: 5px 5px 0 0;
+          }
+          .red {
+            background-color: #E94B35;
+            border-radius: 100%;
+            width: 15px;
+            height: 15px;
+            margin: 0 auto;
+            left: -47%;
+            bottom: -20%;
+            position:relative;
+          }
+          .yellow {
+            background-color: #f0f000;
+            border-radius: 100%;
+            width: 15px;
+            height: 15px;
+            margin: 0 auto;
+            left: -44%;
+            bottom: 40%;
+            position:relative;
+            display: block;
+          }
+          .green {
+              background-color: #1AAF5C;
+              border-radius: 100%;
+              width: 15px;
+              height: 15px;
+              margin: 0 auto;
+              left: -41%;
+              bottom: 99%;
+              position:relative;
+              display: block;
+          }`}
+        </style>
+      </div>
+    )
+
     if (this.state.board && this.state.start) {
       this.scoreboard = this.scoreboard.replace(/([\n])/g, '<br>')
       this.scoreboard = this.scoreboard.replace(/([ ])/g, '&nbsp;')
@@ -285,15 +342,26 @@ export default class extends Component {
       boardString = boardString.replace(/([\n])/g, '<br>')
       boardString = boardString.replace(/([ ])/g, '&nbsp;')
       return (
-        <div className='terminal'>
-          {Parser(boardString)}
-          <br />
-          {Parser(this.scoreboard)}
-          <style jsx>{`
-            .terminal {
-              font-family: monospace
-            }
-          `}</style>
+        <div>
+          <TerminalBar />
+          <div className='terminal'>
+            {Parser(boardString)}
+            <br />
+            {Parser(this.scoreboard)}
+            <style jsx>{`
+              .terminal {
+                background-color: #33485E;
+                width: 750px;
+                height: 350px;
+                border-radius: 0 0 2% 2%;
+                margin: 0 auto;
+                padding: 1px;
+                color: #fff;
+                font-family: monospace;
+                text-align: center;
+              }
+            `}</style>
+          </div>
         </div>
       )
     } else {
