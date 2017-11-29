@@ -247,16 +247,13 @@ export default class extends Component {
     const board = this.state.board.map((row) => {
       return row.slice(0)
     })
-    let rowRandom = Math.floor(Math.random() * ((board.length - 1) - 1)) + 1
-    let colRandom = Math.floor(Math.random() * ((board[0].length - 1) - 1)) + 1
+    let rowRandom = Math.floor((Math.random() * (board.length - 2)) + 1)
+    let colRandom = Math.floor((Math.random() * (board[0].length - 2)) + 1)
     while (board[rowRandom][colRandom] === '.') {
-      rowRandom = Math.floor(Math.random() * ((board.length - 1) - 1)) + 1
-      colRandom = Math.floor(Math.random() * ((board[0].length) - 1)) + 1
+      rowRandom = Math.floor((Math.random() * (board.length - 2)) + 1)
+      colRandom = Math.floor((Math.random() * (board[0].length - 2)) + 1)
     }
     board[rowRandom][colRandom] = '.'
-    console.log(`row: ${rowRandom}`)
-    console.log(`col: ${colRandom}`)
-    console.log(board)
     this.setState({ board })
   }
 
@@ -353,7 +350,7 @@ export default class extends Component {
                 background-color: #33485E;
                 width: 750px;
                 height: 350px;
-                border-radius: 0 0 2% 2%;
+                border-radius: 0 0 5px 5px;
                 margin: 0 auto;
                 padding: 1px;
                 color: #fff;
