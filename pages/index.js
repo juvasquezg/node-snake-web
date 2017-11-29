@@ -20,13 +20,6 @@ export default class extends Component {
     this.setupGame = this.setupGame.bind(this)
   }
 
-  componentWillMount () {
-    // this.setupGame().then(() => {
-    //   this.putOnTheBoard()
-    //   this.setState({ start: true })
-    // })
-  }
-
   componentDidMount () {
     this.setupGame().then(() => {
       this.putOnTheBoard()
