@@ -262,6 +262,10 @@ export default class extends Component {
   }
 
   render () {
+    const Header = () => (
+      <div className="header"> {'PRESS -> OR <- TO PLAY THE GAME'} </div>
+    )
+
     const TerminalBar = () => (
       <div className="bar">
         <div className="red">
@@ -269,6 +273,14 @@ export default class extends Component {
         <div className="yellow"></div>
         <div className="green"></div>
         <style jsx global>{`
+          .header {
+            font-family: monospace;
+            color: #292A2A;
+            margin: auto;
+            padding: 15px;
+            font-size: 30px;
+            text-align: center;
+          }
           .bar {
             text-align: center;
             width: 752px;
@@ -340,6 +352,7 @@ export default class extends Component {
       boardString = boardString.replace(/([ ])/g, '&nbsp;')
       return (
         <div>
+          <Header />
           <TerminalBar />
           <div className='terminal'>
             {Parser(boardString)}
