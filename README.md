@@ -3,7 +3,7 @@
 Snake game
 
 - With Next.js
-- deplyoy with zeit now
+- deploy with zeit now
 
 [snake game](https://snake-web-bebfxlrdwe.now.sh)
 
